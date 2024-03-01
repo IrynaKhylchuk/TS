@@ -1,6 +1,6 @@
 //! 1
 interface Shape {
-    name: string,
+    name: string
     calculateArea(): number
 }
 
@@ -10,7 +10,7 @@ class Circle implements Shape {
 
     constructor(radius: number) {
         this.name = 'Circle'
-        this.radius= radius
+        this.radius = radius
     }
 
     calculateArea(): number {
@@ -25,8 +25,8 @@ class Rectangle implements Shape {
 
     constructor(width: number, length: number) {
         this.name = 'Circle'
-        this.width= width
-        this.length= length
+        this.width = width
+        this.length = length
     }
 
     calculateArea(): number {
@@ -39,3 +39,69 @@ const rectangle = new Rectangle(2, 2)
 
 console.log(`Circle area -`, circle.calculateArea())
 console.log(`Rectangle area -`, rectangle.calculateArea())
+
+
+//! 2
+interface Settings {
+    theme?: string
+    fontSize?: number
+    isDarkMode?: boolean
+}
+
+function updateSettings(obj: Settings, theme?: string, fontSize?: number, isDarkMode?: boolean): void {
+    if (typeof theme !== 'undefined') {
+        obj.theme = theme
+    }
+    if (typeof fontSize !== 'undefined') {
+        obj.fontSize = fontSize
+    }
+    if (typeof isDarkMode !== 'undefined') {
+        obj.isDarkMode = isDarkMode
+    }
+}
+
+const test: Settings = {
+    theme: 'dark',
+    fontSize: 32,
+    isDarkMode: true
+}
+
+updateSettings(test, undefined, 35, false)
+console.log(test)
+
+
+//! 3
+interface User {
+    name: string
+    age: number
+}
+
+interface Account {
+    username: string
+    email: string
+}
+
+interface UserProfile extends User, Account { }
+
+function getUserProfile(user: User, account: Account): UserProfile {
+    let userprofile: UserProfile = {
+        name: user.name,
+        age: user.age,
+        username: account.username,
+        email: account.email
+    }
+
+    return userprofile
+}
+
+let user: User = {
+    name: 'John',
+    age: 27
+}
+
+let account: Account = {
+    username: 'johnDoe',
+    email: 'johnDoe@mail.com'
+}
+
+console.log(getUserProfile(user, account))

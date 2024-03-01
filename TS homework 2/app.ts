@@ -15,10 +15,10 @@ function getObjsByProp(arr: Object[], prop: string, val: any): Object[] {
 }
 
 const arrTask2 = [
-    {fruit: 'apple', color: 'red'},
-    {fruit: 'apple', color: 'green'},
-    {fruit: 'orange', color: 'orange'},
-    {fruit: 'kiwi', color: 'green'}
+    { fruit: 'apple', color: 'red' },
+    { fruit: 'apple', color: 'green' },
+    { fruit: 'orange', color: 'orange' },
+    { fruit: 'kiwi', color: 'green' }
 ]
 
 console.log(`Array with found objects:`, getObjsByProp(arrTask2, 'fruit', 'apple'))
@@ -26,13 +26,13 @@ console.log(`Array with found objects:`, getObjsByProp(arrTask2, 'fruit', 'apple
 
 //! 3
 function getObjByProp(arr: Object[], prop: string, val: any): Object | undefined {
-    return arr.find(obj => obj[prop] === val? obj : undefined)
+    return arr.find(obj => obj[prop] === val ? obj : undefined)
 }
 
 const arrTask3 = [
-    {fruit: 'apple', color: 'red'},
-    {fruit: 'orange', color: 'orange'},
-    {fruit: 'kiwi', color: 'green'}
+    { fruit: 'apple', color: 'red' },
+    { fruit: 'orange', color: 'orange' },
+    { fruit: 'kiwi', color: 'green' }
 ]
 
 console.log(`Found object:`, getObjByProp(arrTask3, 'fruit', 'apple'))
