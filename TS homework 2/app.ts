@@ -21,7 +21,7 @@ const arrTask2 = [
     {fruit: 'kiwi', color: 'green'}
 ]
 
-console.log(getObjsByProp(arrTask2, 'fruit', 'apple'))
+console.log(`Array with found objects:`, getObjsByProp(arrTask2, 'fruit', 'apple'))
 
 
 //! 3
@@ -35,7 +35,7 @@ const arrTask3 = [
     {fruit: 'kiwi', color: 'green'}
 ]
 
-console.log(getObjByProp(arrTask3, 'fruit', 'apple'))
+console.log(`Found object:`, getObjByProp(arrTask3, 'fruit', 'apple'))
 
 
 //! 4
@@ -47,4 +47,4 @@ function getArithmeticMean(arr: number[]): number {
     return arithmeticMean
 }
 
-console.log(getArithmeticMean([1, 2, 3, 4]))
+console.log(`Arithmetic mean:`, getArithmeticMean([1, 2, 3, 4]))
